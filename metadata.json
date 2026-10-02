@@ -1,0 +1,7 @@
+{
+  "name": "iDevices4You - Assistência Técnica iPhone",
+  "description": "Assistência Técnica iPhone Santa Maria, iDevices4You, iPhones Novos e Seminovos, Troca de iPhone Usado e Consultoria Apple especializada com garantia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

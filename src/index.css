@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyan-50: #f0f9ff;
+  --color-cyan-100: #e0f4fe;
+  --color-cyan-200: #bae7fd;
+  --color-cyan-300: #7dd4fc;
+  --color-cyan-400: #009fe1;
+  --color-cyan-500: #009fe1;
+  --color-cyan-600: #0082ba;
+  --color-cyan-700: #006896;
+  --color-cyan-800: #005378;
+  --color-cyan-900: #003b55;
+  --color-cyan-950: #002334;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #090d16;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism utilities for White + #009FE1 Cyan + Black theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 159, 225, 0.5);
+  box-shadow: 0 16px 35px -5px rgba(0, 159, 225, 0.18);
+  transform: translateY(-2px);
+}
+
+.glass-pill {
+  background: rgba(240, 249, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 159, 225, 0.3);
+}
+
+.glass-pill:hover {
+  background: rgba(224, 244, 254, 0.95);
+  border-color: rgba(0, 159, 225, 0.6);
+}
+
+/* Cyan #009FE1 ambient glows for light mode */
+.cyan-glow {
+  text-shadow: 0 0 15px rgba(0, 159, 225, 0.4);
+}
+
+.cyan-box-glow {
+  box-shadow: 0 8px 30px -4px rgba(0, 159, 225, 0.3);
+}
+
+/* Custom subtle scrollbar with #009FE1 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 159, 225, 0.75);
+}
+
