@@ -268,31 +268,24 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
               className="glass-panel rounded-3xl border border-slate-200/90 hover:border-cyan-400 transition-all duration-300 hover:shadow-[0_12px_35px_rgba(0,159,225,0.2)] flex flex-col justify-between overflow-hidden group bg-white/95"
             >
               <div>
-                {/* Image Container: Preserves 100% Original Format without cropping or zoom */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-900/[0.04] border-b border-slate-200 flex items-center justify-center">
-                  {/* Ambient background blur for natural atmosphere */}
-                  <img
-                    src={item.image}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-25 scale-110 pointer-events-none select-none"
-                  />
-
-                  {/* Main photo in its authentic original format */}
+                {/* Image Container: Original 1080x1350 (4:5) Format */}
+                <div className="relative aspect-[1080/1350] w-full overflow-hidden bg-slate-100 border-b border-slate-200">
                   <img
                     src={item.image}
                     alt={`Foto de ${item.name} da iDevices4You`}
                     loading="lazy"
                     decoding="async"
                     onClick={() => setActiveModalItem(item)}
-                    className="relative z-10 max-w-full max-h-full object-contain cursor-pointer transition-opacity duration-300 hover:opacity-95"
+                    className="w-full h-full object-cover object-center cursor-pointer transition-opacity duration-300 hover:opacity-95"
+                    width="1080"
+                    height="1350"
                   />
 
                   {/* Soft top gradient only for badges readability without darkening the device */}
-                  <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-20" />
+                  <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
 
                   {/* Top tags */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
                     <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/95 backdrop-blur-md text-slate-900 border border-white/40 shadow-sm">
                       {item.tag}
                     </span>
@@ -308,7 +301,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Ver post de ${item.name} no Instagram`}
-                    className="absolute bottom-3 right-3 p-2 rounded-full bg-black/75 hover:bg-black text-white hover:text-cyan-300 backdrop-blur-md border border-white/20 transition-all shadow-md group/ig z-20"
+                    className="absolute bottom-3 right-3 p-2 rounded-full bg-black/75 hover:bg-black text-white hover:text-cyan-300 backdrop-blur-md border border-white/20 transition-all shadow-md group/ig"
                   >
                     <Instagram className="w-4 h-4 transition-transform" />
                   </a>
@@ -481,19 +474,13 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
               </div>
 
               <div className="mb-5 flex items-center gap-4 p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                <div className="relative w-16 h-20 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shrink-0 flex items-center justify-center">
-                  <img
-                    src={activeModalItem.image}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover blur-md opacity-25 scale-110 pointer-events-none select-none"
-                  />
-                  <img
-                    src={activeModalItem.image}
-                    alt={activeModalItem.name}
-                    className="relative z-10 max-w-full max-h-full object-contain"
-                  />
-                </div>
+                <img
+                  src={activeModalItem.image}
+                  alt={activeModalItem.name}
+                  className="w-16 h-20 aspect-[1080/1350] rounded-xl object-cover object-center border border-slate-200 shrink-0"
+                  width="1080"
+                  height="1350"
+                />
                 <div>
                   <div className="text-xl font-extrabold text-slate-950 font-mono">
                     {activeModalItem.priceCash}
