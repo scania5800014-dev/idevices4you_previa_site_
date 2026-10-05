@@ -51,7 +51,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "100%",
       condition: "Seminovo, em ótimo estado",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-15-pro-max-azul.jpg",
+      image: "/catalog/iphone-15-pro-max-azul.jpg?v=3",
       instagramUrl: "https://www.instagram.com/p/Dc1Q4b_ROQk/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Capacidade 256GB na cor Azul Titânio",
@@ -72,7 +72,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "100%",
       condition: "Estado de NOVO (20 dias de uso)",
       warranty: "Garantia Apple até Agosto/2027",
-      image: "/catalog/iphone-17-256gb.jpg",
+      image: "/catalog/iphone-17-256gb.jpg?v=3",
       instagramUrl: "https://www.instagram.com/p/DcwXuddu51f/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "256GB com apenas 20 dias de uso",
@@ -93,7 +93,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "88%",
       condition: "Seminovo, em estado de NOVO",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-16-128gb-azul.jpg",
+      image: "/catalog/iphone-16-128gb-azul.jpg?v=3",
       instagramUrl: "https://www.instagram.com/p/DcgTDhCxE4U/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Cor Azul estilosa e acabamento impecável",
@@ -113,7 +113,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       installment: "em até 18x no cartão",
       condition: "Excelente estado para edição e código",
       warranty: "Garantia técnica e procedência",
-      image: "/catalog/macbook-pro-2019.jpg",
+      image: "/catalog/macbook-pro-2019.jpg?v=3",
       instagramUrl: "https://www.instagram.com/p/Dcd0SUnxdDH/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Processador Intel Core i5 2.4GHz • 8GB RAM",
@@ -134,7 +134,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "92%",
       condition: "Seminovo, em excelente estado",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-16-pro-max-natural.jpg",
+      image: "/catalog/iphone-16-pro-max-natural.jpg?v=3",
       instagramUrl: "https://www.instagram.com/p/DcbMs45xnhi/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Titânio Natural com capacidade de 256GB",
@@ -155,7 +155,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "100%",
       condition: "Usado, em ótimo estado",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-12-pro-azul-pacifico.jpg",
+      image: "/catalog/iphone-12-pro-azul-pacifico.jpg?v=3",
       instagramUrl: "https://www.instagram.com/p/DcTtzEHRBK8/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Cor Azul Pacífico exclusiva e acabamento fosco",
@@ -268,25 +268,31 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
               className="glass-panel rounded-3xl border border-slate-200/90 hover:border-cyan-400 transition-all duration-300 hover:shadow-[0_12px_35px_rgba(0,159,225,0.2)] flex flex-col justify-between overflow-hidden group bg-white/95"
             >
               <div>
-                {/* Image Container: Normal Format (aspect-square 1:1) without artificial zoom */}
-                <div className="relative aspect-square w-full overflow-hidden bg-slate-50 border-b border-slate-200">
+                {/* Image Container: Preserves 100% Original Format without cropping or zoom */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-900/[0.04] border-b border-slate-200 flex items-center justify-center">
+                  {/* Ambient background blur for natural atmosphere */}
+                  <img
+                    src={item.image}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-25 scale-110 pointer-events-none select-none"
+                  />
+
+                  {/* Main photo in its authentic original format */}
                   <img
                     src={item.image}
                     alt={`Foto de ${item.name} da iDevices4You`}
                     loading="lazy"
                     decoding="async"
                     onClick={() => setActiveModalItem(item)}
-                    style={{ objectPosition: 'center 12%' }}
-                    className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-95 cursor-pointer"
-                    width="640"
-                    height="640"
+                    className="relative z-10 max-w-full max-h-full object-contain cursor-pointer transition-opacity duration-300 hover:opacity-95"
                   />
 
                   {/* Soft top gradient only for badges readability without darkening the device */}
-                  <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+                  <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-20" />
 
                   {/* Top tags */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
                     <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/95 backdrop-blur-md text-slate-900 border border-white/40 shadow-sm">
                       {item.tag}
                     </span>
@@ -302,7 +308,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Ver post de ${item.name} no Instagram`}
-                    className="absolute bottom-3 right-3 p-2 rounded-full bg-black/75 hover:bg-black text-white hover:text-cyan-300 backdrop-blur-md border border-white/20 transition-all shadow-md group/ig"
+                    className="absolute bottom-3 right-3 p-2 rounded-full bg-black/75 hover:bg-black text-white hover:text-cyan-300 backdrop-blur-md border border-white/20 transition-all shadow-md group/ig z-20"
                   >
                     <Instagram className="w-4 h-4 transition-transform" />
                   </a>
@@ -475,14 +481,19 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
               </div>
 
               <div className="mb-5 flex items-center gap-4 p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                <img
-                  src={activeModalItem.image}
-                  alt={activeModalItem.name}
-                  style={{ objectPosition: 'center 12%' }}
-                  className="w-16 h-16 aspect-square rounded-xl object-cover border border-slate-200 shrink-0"
-                  width="640"
-                  height="640"
-                />
+                <div className="relative w-16 h-20 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shrink-0 flex items-center justify-center">
+                  <img
+                    src={activeModalItem.image}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover blur-md opacity-25 scale-110 pointer-events-none select-none"
+                  />
+                  <img
+                    src={activeModalItem.image}
+                    alt={activeModalItem.name}
+                    className="relative z-10 max-w-full max-h-full object-contain"
+                  />
+                </div>
                 <div>
                   <div className="text-xl font-extrabold text-slate-950 font-mono">
                     {activeModalItem.priceCash}
