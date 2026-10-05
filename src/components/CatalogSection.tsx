@@ -51,7 +51,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "100%",
       condition: "Seminovo, em ótimo estado",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-15-pro-max-azul.jpg?v=3",
+      image: "https://i.postimg.cc/SRWj50wH/793001775-18407045188089708-1504603093995935590-n.jpg",
       instagramUrl: "https://www.instagram.com/p/Dc1Q4b_ROQk/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Capacidade 256GB na cor Azul Titânio",
@@ -72,7 +72,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "100%",
       condition: "Estado de NOVO (20 dias de uso)",
       warranty: "Garantia Apple até Agosto/2027",
-      image: "/catalog/iphone-17-256gb.jpg?v=3",
+      image: "https://i.postimg.cc/PJmNcGB9/790412108-18406789261089708-1564776926385927210-n.jpg",
       instagramUrl: "https://www.instagram.com/p/DcwXuddu51f/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "256GB com apenas 20 dias de uso",
@@ -93,7 +93,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "88%",
       condition: "Seminovo, em estado de NOVO",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-16-128gb-azul.jpg?v=3",
+      image: "https://i.postimg.cc/4yznMCrS/787191754-18405886630089708-4346944294294894176-n.jpg",
       instagramUrl: "https://www.instagram.com/p/DcgTDhCxE4U/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Cor Azul estilosa e acabamento impecável",
@@ -113,7 +113,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       installment: "em até 18x no cartão",
       condition: "Excelente estado para edição e código",
       warranty: "Garantia técnica e procedência",
-      image: "/catalog/macbook-pro-2019.jpg?v=3",
+      image: "https://i.postimg.cc/2Sj3HK2N/macbook-pro-2019-jpg.jpg",
       instagramUrl: "https://www.instagram.com/p/Dcd0SUnxdDH/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Processador Intel Core i5 2.4GHz • 8GB RAM",
@@ -134,7 +134,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "92%",
       condition: "Seminovo, em excelente estado",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-16-pro-max-natural.jpg?v=3",
+      image: "https://i.postimg.cc/Vvj5Ty3T/785601902-18405615889089708-4246467351449627971-n.jpg",
       instagramUrl: "https://www.instagram.com/p/DcbMs45xnhi/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Titânio Natural com capacidade de 256GB",
@@ -155,7 +155,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
       batteryHealth: "100%",
       condition: "Usado, em ótimo estado",
       warranty: "Garantia de 3 meses pela loja",
-      image: "/catalog/iphone-12-pro-azul-pacifico.jpg?v=3",
+      image: "https://i.postimg.cc/L5dnN4bF/784242572-18405208009089708-6766021498389980571-n.jpg",
       instagramUrl: "https://www.instagram.com/p/DcTtzEHRBK8/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
       highlights: [
         "Cor Azul Pacífico exclusiva e acabamento fosco",
@@ -268,24 +268,22 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
               className="glass-panel rounded-3xl border border-slate-200/90 hover:border-cyan-400 transition-all duration-300 hover:shadow-[0_12px_35px_rgba(0,159,225,0.2)] flex flex-col justify-between overflow-hidden group bg-white/95"
             >
               <div>
-                {/* Image Container: Original 1080x1350 (4:5) Format */}
-                <div className="relative aspect-[1080/1350] w-full overflow-hidden bg-slate-100 border-b border-slate-200">
+                {/* Image Container: Original Format Without Zoom and Without Cutting (SEM ZOOM E SEM CORTAR) */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-50 border-b border-slate-200 flex items-center justify-center p-1.5 sm:p-2">
                   <img
                     src={item.image}
                     alt={`Foto de ${item.name} da iDevices4You`}
                     loading="lazy"
                     decoding="async"
                     onClick={() => setActiveModalItem(item)}
-                    className="w-full h-full object-cover object-center cursor-pointer transition-opacity duration-300 hover:opacity-95"
-                    width="1080"
-                    height="1350"
+                    className="w-full h-full object-contain cursor-pointer transition-opacity duration-300 hover:opacity-95"
                   />
 
                   {/* Soft top gradient only for badges readability without darkening the device */}
-                  <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+                  <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/30 to-transparent pointer-events-none z-10" />
 
                   {/* Top tags */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
                     <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/95 backdrop-blur-md text-slate-900 border border-white/40 shadow-sm">
                       {item.tag}
                     </span>
@@ -301,7 +299,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Ver post de ${item.name} no Instagram`}
-                    className="absolute bottom-3 right-3 p-2 rounded-full bg-black/75 hover:bg-black text-white hover:text-cyan-300 backdrop-blur-md border border-white/20 transition-all shadow-md group/ig"
+                    className="absolute bottom-3 right-3 p-2 rounded-full bg-black/75 hover:bg-black text-white hover:text-cyan-300 backdrop-blur-md border border-white/20 transition-all shadow-md group/ig z-10"
                   >
                     <Instagram className="w-4 h-4 transition-transform" />
                   </a>
@@ -474,13 +472,13 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectProduct 
               </div>
 
               <div className="mb-5 flex items-center gap-4 p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                <img
-                  src={activeModalItem.image}
-                  alt={activeModalItem.name}
-                  className="w-16 h-20 aspect-[1080/1350] rounded-xl object-cover object-center border border-slate-200 shrink-0"
-                  width="1080"
-                  height="1350"
-                />
+                <div className="w-16 h-20 aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shrink-0 flex items-center justify-center p-1">
+                  <img
+                    src={activeModalItem.image}
+                    alt={activeModalItem.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
                 <div>
                   <div className="text-xl font-extrabold text-slate-950 font-mono">
                     {activeModalItem.priceCash}
