@@ -88,7 +88,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   // Official Google Maps business link provided by user
-  const googleMapsReviewsUrl = "https://maps.app.goo.gl/hxVy2UgYqif8AbgU7";
+  const googleMapsReviewsUrl = "https://maps.app.goo.gl/Yixt1w46eFpRocxJ9";
 
   return (
     <section

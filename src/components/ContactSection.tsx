@@ -31,7 +31,7 @@ export const ContactSection: React.FC = () => {
   const instagramUrl = "https://www.instagram.com/idevices4you/?hl=pt";
   const addressText = "Edifício Arquipélago - R. Dr. Alberto Pasqualini, 111 - Sala 1206 / 12º Andar - Centro, Santa Maria - RS, 97015-010";
   const hoursText = "Segunda a Sexta: 9h às 19h | Sábado: 9h às 16h (Sem fechar ao meio-dia)";
-  const googleMapsUrl = "https://maps.app.goo.gl/hxVy2UgYqif8AbgU7";
+  const googleMapsUrl = "https://maps.app.goo.gl/Yixt1w46eFpRocxJ9";
   const googleMapsDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=-29.6874181,-53.8079238";
   const mapsEmbedUrl = "https://maps.google.com/maps?q=iDevices4You%2C%20R.%20Dr.%20Alberto%20Pasqualini%2C%20111%20-%20Centro%2C%20Santa%20Maria%20-%20RS%2C%2097015-010&t=&z=16&ie=UTF8&iwloc=&output=embed";
 
